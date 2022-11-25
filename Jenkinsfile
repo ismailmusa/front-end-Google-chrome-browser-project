@@ -1,14 +1,20 @@
 pipeline {
-  agent none
-  stages {
-    stage('Build') {
-      agent any
-      steps {
-        checkout scm
-        sh 'make'
-        stash includes: '**/target/*.jar', name: 'app'
-      }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
-}  
-  
+}
