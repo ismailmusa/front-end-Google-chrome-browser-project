@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                archiveArtifacts artifacts: 'generatedFile.txt'
+                archiveArtifacts artifacts: 'index.html'
                 echo 'Deploying....'
             }
         }
